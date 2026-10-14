@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0B0712" />
+<title>FedEx Holiday Giveaway 2025 — Claim Your Christmas Package</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Inter', 'sans-serif'] },
+        colors: {
+          fedex: { purple: '#4D148C', orange: '#FF6600' },
+          ink: '#0B0712',
+        },
+        keyframes: {
+          float: {
+            '0%,100%': { transform: 'translateY(0px)' },
+            '50%': { transform: 'translateY(-10px)' },
+          },
+          pulseDot: {
+            '0%,100%': { opacity: '1', transform: 'scale(1)' },
+            '50%': { opacity: '0.4', transform: 'scale(0.85)' },
+          },
+          shimmer: {
+            '0%': { backgroundPosition: '-200% 0' },
+            '100%': { backgroundPosition: '200% 0' },
+          },
+          fadeUp: {
+            '0%': { opacity: '0', transform: 'translateY(12px)' },
+            '100%': { opacity: '1', transform: 'translateY(0)' },
+          },
+        },
+        animation: {
+          float: 'float 6s ease-in-out infinite',
+          pulseDot: 'pulseDot 1.6s ease-in-out infinite',
+          shimmer: 'shimmer 5s linear infinite',
+          fadeUp: 'fadeUp 0.5s ease-out',
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { background-color: #0B0712; overflow-x: hidden; }
+  ::selection { background: #FF6600; color: #fff; }
+
+  /* Snowfall */
+  .snow-layer {
+    position: fixed; inset: 0; pointer-events: none; z-index: 1;
+    background-image:
+      radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.9), transparent),
+      radial-gradient(1.5px 1.5px at 60% 70%, rgba(255,255,255,0.7), transparent),
+      radial-gradient(1px 1px at 50% 20%, rgba(255,255,255,0.6), transparent),
+      radial-gradient(2px 2px at 85% 15%, rgba(255,255,255,0.8), transparent),
+      radial-gradient(1px 1px at 90% 60%, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1.5px 1.5px at 33% 80%, rgba(255,255,255,0.7), transparent),
+      radial-gradient(1px 1px at 15% 90%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(2px 2px at 72% 45%, rgba(255,255,255,0.7), transparent);
+    background-size: 300% 300%;
+    animation: snowdrift 28s linear infinite;
+    opacity: 0.35;
+  }
+  @media (min-width: 768px) {
+    .snow-layer { opacity: 0.5; }
+  }
+  @keyframes snowdrift {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 60% 100%; }
+  }
+
+  .glass {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .text-shimmer {
+    background: linear-gradient(90deg, #fff 0%, #FFB27A 25%, #fff 50%, #C9A6FF 75%, #fff 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 5s linear infinite;
+  }
+
+  .btn-glow {
+    box-shadow: 0 0 0 rgba(255,102,0,0.7);
+    transition: all 0.3s ease;
+  }
+  @media (hover: hover) {
+    .btn-glow:hover {
+      box-shadow: 0 10px 40px rgba(255,102,0,0.5), 0 0 0 1px rgba(255,255,255,0.15);
+      transform: translateY(-2px);
+    }
+  }
+
+  .feed-item { animation: fadeUp 0.5s ease-out; }
+
+  /* Mobile nav drawer */
+  #mobileMenu {
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  #mobileMenu.hidden-menu {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+  }
+
+  /* Reduce heavy blurs on small screens for perf */
+  @media (max-width: 640px) {
+    .glow-blur { filter: blur(80px) !important; }
+  }
+</style>
+</head>
+<body class="font-sans text-white antialiased">
+
+<!-- Snow + ambient glows -->
+<div class="snow-layer"></div>
+<div class="glow-blur fixed -top-40 -left-40 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] rounded-full bg-fedex-purple/40 blur-[140px] pointer-events-none z-0"></div>
+<div class="glow-blur fixed -bottom-40 -right-40 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] rounded-full bg-fedex-orange/25 blur-[140px] pointer-events-none z-0"></div>
+<div class="hidden sm:block fixed top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-red-600/10 blur-[160px] pointer-events-none z-0"></div>
+
+<!-- NAV -->
+<nav class="relative z-20 max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-10 py-4 sm:py-6">
+  <div class="flex items-center gap-2 sm:gap-2.5">
+    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-gradient-to-br from-fedex-purple to-fedex-orange grid place-items-center font-black text-xs sm:text-sm">FX</div>
+    <div class="text-lg sm:text-xl lg:text-2xl font-extrabold tracking-tight">
+      <span class="text-white">Fed</span><span class="text-fedex-orange">Ex</span>
+    </div>
+  </div>
+
+  <!-- Desktop links -->
+  <div class="hidden md:flex items-center gap-8 text-sm text-white/60 font-medium">
+    <a href="#how" class="hover:text-white transition">How it works</a>
+    <a href="#prize" class="hover:text-white transition">The Package</a>
+    <a href="#claims" class="hover:text-white transition">Live Claims</a>
+  </div>
+
+  <div class="flex items-center gap-2">
+    <a href="https://t.me/mialynn12?text=Hello%2C%20I%27d%20like%20to%20claim%20my%20Christmas%20gift%20from%20the%20FedEx%20Holiday%20Giveaway.%20Please%20let%20me%20know%20the%20next%20steps.%20Thank%20you."
+       target="_blank" rel="noopener"
+       class="glass rounded-full px-3.5 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold hover:bg-white/10 transition whitespace-nowrap">
+      Claim Gift
+    </a>
+
+    <!-- Mobile menu toggle -->
+    <button id="menuBtn" aria-label="Open menu"
+      class="md:hidden glass rounded-full w-9 h-9 grid place-items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu panel -->
+<div id="mobileMenu" class="hidden-menu md:hidden fixed inset-x-3 top-16 sm:top-20 z-30 glass rounded-2xl p-3">
+  <a href="#how" class="block px-4 py-3 rounded-xl text-sm font-medium text-white/80 hover:bg-white/5">How it works</a>
+  <a href="#prize" class="block px-4 py-3 rounded-xl text-sm font-medium text-white/80 hover:bg-white/5">The Package</a>
+  <a href="#claims" class="block px-4 py-3 rounded-xl text-sm font-medium text-white/80 hover:bg-white/5">Live Claims</a>
+</div>
+
+<!-- HERO -->
+<main class="relative z-10">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-6 sm:pt-10 lg:pt-16 pb-14 sm:pb-20 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+    <!-- Left -->
+    <div class="lg:col-span-7">
+      <div class="inline-flex items-center gap-2 glass rounded-full px-3.5 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-sm text-white/80 mb-5 sm:mb-7">
+        <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-400 animate-pulseDot"></span>
+        <span class="font-medium">Verified Holiday Campaign · 2025</span>
+      </div>
+
+      <h1 class="text-[2rem] leading-[1.1] sm:text-5xl lg:text-7xl font-black tracking-tight sm:leading-[1.05] mb-4 sm:mb-6">
+        Your Christmas
+        <span class="block text-shimmer">package is waiting.</span>
+      </h1>
+
+      <p class="text-sm sm:text-base lg:text-lg text-white/60 leading-relaxed max-w-xl mb-7 sm:mb-9">
+        This holiday season, FedEx is delivering more than parcels — we're delivering joy.
+        Claim your complimentary Christmas package today and let the season arrive at your doorstep.
+      </p>
+
+      <!-- CTA -->
+      <div class="flex flex-col items-stretch sm:items-start gap-4 mb-6 sm:mb-8">
+        <a href="https://t.me/mialynn12?text=Hello%2C%20I%27d%20like%20to%20claim%20my%20Christmas%20gift%20from%20the%20FedEx%20Holiday%20Giveaway.%20Please%20let%20me%20know%20the%20next%20steps.%20Thank%20you."
+           target="_blank" rel="noopener"
+           class="btn-glow group inline-flex items-center justify-center gap-2.5 sm:gap-3 bg-gradient-to-r from-fedex-orange to-amber-500 text-black font-bold px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl text-[15px] sm:text-base lg:text-lg w-full sm:w-auto">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          <span>Claim Your Christmas Gift</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </a>
+
+        <div class="text-[11px] sm:text-xs text-white/50 leading-relaxed text-center sm:text-left">
+          <span class="font-semibold text-white/70">No forms. No fees.</span>
+          <span class="block sm:inline"> Opens a direct message on Telegram.</span>
+        </div>
+      </div>
+
+      <!-- Live ticker pill -->
+      <div class="glass rounded-2xl px-3.5 sm:px-4 py-2.5 sm:py-3 inline-flex items-center gap-2.5 sm:gap-3 max-w-full">
+        <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-400 animate-pulseDot shrink-0"></span>
+        <span class="text-xs sm:text-sm text-white/70 truncate" id="tickerText">
+          Someone from Ohio just claimed their package
+        </span>
+      </div>
+    </div>
+
+    <!-- Right: Package card -->
+    <div class="lg:col-span-5 w-full">
+      <div class="relative animate-float max-w-md mx-auto lg:max-w-none">
+        <div class="absolute inset-0 bg-gradient-to-tr from-fedex-purple/40 to-fedex-orange/30 blur-3xl rounded-full"></div>
+
+        <div class="relative glass rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8">
+          <div class="flex items-center justify-between mb-4 sm:mb-6">
+            <div class="text-[10px] sm:text-xs uppercase tracking-widest text-white/50 font-semibold">Shipment Preview</div>
+            <div class="text-[10px] sm:text-xs font-mono text-fedex-orange">#FX-2025-XMAS</div>
+          </div>
+
+          <!-- Wrapped box -->
+          <div class="relative aspect-square rounded-xl sm:rounded-2xl bg-gradient-to-br from-fedex-purple/30 via-black/20 to-fedex-orange/20 grid place-items-center overflow-hidden border border-white/10">
+            <div class="absolute inset-0 opacity-40" style="background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0 10px, transparent 10px 20px);"></div>
+
+            <div class="relative text-center px-4">
+              <div class="text-6xl sm:text-7xl lg:text-8xl mb-3 sm:mb-4">🎁</div>
+              <div class="text-xs sm:text-sm font-semibold text-white/90">Mystery Holiday Package</div>
+              <div class="text-[10px] sm:text-xs text-white/50 mt-1">Contents sealed until delivery</div>
+            </div>
+
+            <div class="absolute top-3 left-3 sm:top-4 sm:left-4 glass rounded-full px-2.5 sm:px-3 py-1 text-[9px] sm:text-[10px] font-semibold text-white/80">SEALED</div>
+            <div class="absolute top-3 right-3 sm:top-4 sm:right-4 glass rounded-full px-2.5 sm:px-3 py-1 text-[9px] sm:text-[10px] font-semibold text-green-300">IN TRANSIT</div>
+          </div>
+
+          <div class="mt-4 sm:mt-6 grid grid-cols-3 gap-2 sm:gap-3 text-center">
+            <div class="glass rounded-xl py-2.5 sm:py-3">
+              <div class="text-[9px] sm:text-[10px] uppercase text-white/40 font-semibold">Carrier</div>
+              <div class="text-xs sm:text-sm font-bold mt-0.5">FedEx</div>
+            </div>
+            <div class="glass rounded-xl py-2.5 sm:py-3">
+              <div class="text-[9px] sm:text-[10px] uppercase text-white/40 font-semibold">Service</div>
+              <div class="text-xs sm:text-sm font-bold mt-0.5">Priority</div>
+            </div>
+            <div class="glass rounded-xl py-2.5 sm:py-3">
+              <div class="text-[9px] sm:text-[10px] uppercase text-white/40 font-semibold">Cost</div>
+              <div class="text-xs sm:text-sm font-bold mt-0.5 text-fedex-orange">Free</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-16 border-t border-white/5">
+    <div class="text-center mb-10 sm:mb-14">
+      <div class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-fedex-orange font-bold mb-2 sm:mb-3">Simple Process</div>
+      <h2 class="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight">How it works</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+      <!-- Step 1 -->
+      <div class="glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:bg-white/[0.07] transition">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-fedex-purple to-fedex-purple/40 grid place-items-center font-black mb-4 sm:mb-5 text-sm sm:text-base">1</div>
+        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Tap the claim button</h3>
+        <p class="text-white/60 text-sm leading-relaxed">Hit "Claim Your Christmas Gift" anywhere on this page. It opens a direct message with us on Telegram.</p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:bg-white/[0.07] transition">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-fedex-orange to-amber-500/40 grid place-items-center font-black mb-4 sm:mb-5 text-black text-sm sm:text-base">2</div>
+        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Send the pre-written message</h3>
+        <p class="text-white/60 text-sm leading-relaxed">Your message is already composed. Just tap send — no typing, no forms, no friction.</p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:bg-white/[0.07] transition sm:col-span-2 md:col-span-1">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-red-600 to-red-800 grid place-items-center font-black mb-4 sm:mb-5 text-sm sm:text-base">3</div>
+        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Receive your package</h3>
+        <p class="text-white/60 text-sm leading-relaxed">Our team confirms your claim and your mystery holiday package is shipped to you — free of charge.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE CLAIMS -->
+  <section id="claims" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-16 border-t border-white/5">
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+
+      <div class="lg:col-span-5">
+        <div class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-fedex-orange font-bold mb-2 sm:mb-3">Real-Time Activity</div>
+        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-4 sm:mb-5">
+          Packages being claimed <span class="text-fedex-orange">right now.</span>
+        </h2>
+        <p class="text-sm sm:text-base text-white/60 leading-relaxed mb-5 sm:mb-6">
+          Holiday demand is high. Thousands of people are claiming their Christmas packages across the country — every few seconds someone new opens a chat with us.
+        </p>
+
+        <div class="grid grid-cols-2 gap-3 sm:gap-4 max-w-md">
+          <div class="glass rounded-2xl p-3.5 sm:p-4">
+            <div class="text-xl sm:text-2xl font-black text-fedex-orange" id="statCount">12,483</div>
+            <div class="text-[11px] sm:text-xs text-white/50 mt-1">Claims today</div>
+          </div>
+          <div class="glass rounded-2xl p-3.5 sm:p-4">
+            <div class="text-xl sm:text-2xl font-black">4.9<span class="text-white/40 text-base sm:text-lg">/5</span></div>
+            <div class="text-[11px] sm:text-xs text-white/50 mt-1">Recipient rating</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="glass rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8">
+          <div class="flex items-center justify-between mb-4 sm:mb-6">
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-400 animate-pulseDot"></span>
+              <span class="text-xs sm:text-sm font-semibold text-white/80">Live claim feed</span>
+            </div>
+            <div class="text-[10px] sm:text-xs text-white/40">Updated continuously</div>
+          </div>
+
+          <div id="feed" class="space-y-2 sm:space-y-3"></div>
+
+          <div class="mt-5 sm:mt-6 pt-5 sm:pt-6 border-t border-white/5 text-center">
+            <a href="https://t.me/mialynn12?text=Hello%2C%20I%27d%20like%20to%20claim%20my%20Christmas%20gift%20from%20the%20FedEx%20Holiday%20Giveaway.%20Please%20let%20me%20know%20the%20next%20steps.%20Thank%20you."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 text-fedex-orange font-semibold hover:gap-3 transition-all text-sm">
+              Join them and claim yours
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="prize" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-14 sm:py-20">
+    <div class="relative glass rounded-2xl sm:rounded-[2rem] p-8 sm:p-12 lg:p-16 text-center overflow-hidden">
+      <div class="absolute -top-20 -right-20 w-60 sm:w-80 h-60 sm:h-80 bg-fedex-orange/20 blur-[100px] rounded-full"></div>
+      <div class="absolute -bottom-20 -left-20 w-60 sm:w-80 h-60 sm:h-80 bg-fedex-purple/30 blur-[100px] rounded-full"></div>
+
+      <div class="relative">
+        <div class="text-4xl sm:text-5xl lg:text-6xl mb-4 sm:mb-6">🎄</div>
+        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-4 sm:mb-5 leading-tight">
+          Don't let your gift<br class="hidden sm:block"> get delivered to someone else.
+        </h2>
+        <p class="text-sm sm:text-base text-white/60 max-w-xl mx-auto mb-7 sm:mb-9 leading-relaxed">
+          The holiday window is closing soon. Claim your package now and we'll take care of the rest — delivered straight to your door.
+        </p>
+
+        <a href="https://t.me/mialynn12?text=Hello%2C%20I%27d%20like%20to%20claim%20my%20Christmas%20gift%20from%20the%20FedEx%20Holiday%20Giveaway.%20Please%20let%20me%20know%20the%20next%20steps.%20Thank%20you."
+           target="_blank" rel="noopener"
+           class="btn-glow inline-flex items-center justify-center gap-2.5 sm:gap-3 bg-gradient-to-r from-fedex-orange to-amber-500 text-black font-bold px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl text-[15px] sm:text-lg w-full sm:w-auto max-w-sm mx-auto">
+          Claim Your Christmas Gift
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+
+        <div class="mt-5 sm:mt-6 text-[11px] sm:text-xs text-white/40">
+          Opens a pre-written message on Telegram · No account required beyond Telegram
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-8 sm:py-10 border-t border-white/5 text-center">
+    <div class="flex items-center justify-center gap-2.5 mb-3 sm:mb-4">
+      <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-md bg-gradient-to-br from-fedex-purple to-fedex-orange grid place-items-center font-black text-[9px] sm:text-[10px]">FX</div>
+      <div class="text-base sm:text-lg font-extrabold tracking-tight">
+        <span>Fed</span><span class="text-fedex-orange">Ex</span>
+      </div>
+    </div>
+    <p class="text-[10px] sm:text-xs text-white/40 max-w-2xl mx-auto leading-relaxed">
+      © 2025 FedEx Holiday Giveaway. This is a promotional holiday campaign. Package contents remain sealed until delivery.
+      Shipping availability may vary by region. FedEx and the FedEx logo are used for illustrative campaign purposes.
+    </p>
+  </footer>
+</main>
+
+<script>
+  // ---------- Mobile menu ----------
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden-menu');
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => mobileMenu.classList.add('hidden-menu'));
+  });
+
+  // ---------- Live ticker ----------
+  const tickerNames = [
+    "Someone from Ohio just claimed their package",
+    "Someone from Texas just claimed their package",
+    "Someone from Florida just claimed their package",
+    "Someone from California just claimed their package",
+    "Someone from New York just claimed their package",
+    "Someone from Georgia just claimed their package",
+    "Someone from Illinois just claimed their package",
+    "Someone from Arizona just claimed their package",
+    "Someone from Nevada just claimed their package",
+    "Someone from Colorado just claimed their package",
+  ];
+  const tickerEl = document.getElementById('tickerText');
+  tickerEl.style.transition = 'opacity 0.25s ease';
+  let tIdx = 0;
+  setInterval(() => {
+    tIdx = (tIdx + 1) % tickerNames.length;
+    tickerEl.style.opacity = 0;
+    setTimeout(() => {
+      tickerEl.textContent = tickerNames[tIdx];
+      tickerEl.style.opacity = 1;
+    }, 250);
+  }, 3500);
+
+  // ---------- Live claim feed ----------
+  const feedData = [
+    { name: "James R.", city: "Columbus, OH", time: "just now" },
+    { name: "Sofia M.", city: "Austin, TX", time: "12s ago" },
+    { name: "Daniel K.", city: "Miami, FL", time: "34s ago" },
+    { name: "Amara O.", city: "Atlanta, GA", time: "1m ago" },
+    { name: "Lucas P.", city: "Denver, CO", time: "2m ago" },
+    { name: "Emily T.", city: "Seattle, WA", time: "2m ago" },
+    { name: "Noah B.", city: "Chicago, IL", time: "3m ago" },
+    { name: "Priya S.", city: "Phoenix, AZ", time: "4m ago" },
+    { name: "Marcus L.", city: "Las Vegas, NV", time: "4m ago" },
+    { name: "Hannah W.", city: "Boston, MA", time: "5m ago" },
+    { name: "Ethan J.", city: "Nashville, TN", time: "6m ago" },
+    { name: "Olivia C.", city: "Portland, OR", time: "7m ago" },
+  ];
+
+  const feedEl = document.getElementById('feed');
+  const isMobile = () => window.innerWidth < 640;
+  const visibleCount = () => isMobile() ? 4 : 5;
+  let feedStart = 0;
+
+  function renderFeed() {
+    feedEl.innerHTML = '';
+    const count = visibleCount();
+    for (let i = 0; i < count; i++) {
+      const item = feedData[(feedStart + i) % feedData.length];
+      const row = document.createElement('div');
+      row.className = 'feed-item flex items-center gap-3 sm:gap-4 glass rounded-xl px-3 sm:px-4 py-2.5 sm:py-3';
+      row.innerHTML = `
+        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gradient-to-br from-fedex-purple to-fedex-orange grid place-items-center text-[11px] sm:text-xs font-bold shrink-0">
+          ${item.name.split(' ')[0][0]}${item.name.split(' ')[1][0]}
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="text-xs sm:text-sm font-semibold truncate">
+            ${item.name} <span class="text-white/40 font-normal">from ${item.city}</span>
+          </div>
+          <div class="text-[11px] sm:text-xs text-white/50 truncate">Claimed a mystery holiday package 🎁</div>
+        </div>
+        <div class="text-[10px] sm:text-[11px] text-white/40 shrink-0">${item.time}</div>
+      `;
+      feedEl.appendChild(row);
+    }
+  }
+
+  renderFeed();
+  setInterval(() => {
+    feedStart = (feedStart + 1) % feedData.length;
+    renderFeed();
+  }, 4000);
+
+  // Re-render on resize so mobile/desktop row counts adjust
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(renderFeed, 150);
+  });
+
+  // ---------- Stats counter ----------
+  const statEl = document.getElementById('statCount');
+  let baseCount = 12483;
+  setInterval(() => {
+    baseCount += Math.floor(Math.random() * 3) + 1;
+    statEl.textContent = baseCount.toLocaleString();
+  }, 2500);
+</script>
+
+</body>
+</html>
